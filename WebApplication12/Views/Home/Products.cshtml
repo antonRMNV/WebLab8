@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Products as list";
+}
+@model IEnumerable<Product>
+<html>
+<head>
+    <title>
+        @ViewData["Title"]
+    </title>
+</head>
+<body>
+    <div class="text-center">
+        <div class="display-4">
+            List of all products
+        </div>
+        @foreach (var product in Model)
+        {
+            <div class="display-6">
+                <b>@product.Id.</b> @product.Name - @product.Price (@product.CreatedDate.ToShortDateString())
+            </div>
+        }
+        <p style="font-size:20px"><a href="/Home/Index">Back to main page</a></p>
+    </div>
+</body>
+</html>
